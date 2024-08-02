@@ -1,0 +1,6 @@
+# Default ignored files
+logs/
+.idea/
+src/.idea/
+src/vendor/
+src/.env

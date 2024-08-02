@@ -1,0 +1,176 @@
+html, body {
+    min-width: 1416px;
+    height: 90%;
+    background-image: url("../../../public/images/waves.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.login-form {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+}
+
+input {
+    width: 40%;
+    height: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fcfcfc;
+    border: 1px solid #dbe0e7;
+    border-radius: 5px;
+}
+
+.login-form .form input::placeholder {
+    color: #aebaca;
+}
+
+.logout {
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+}
+
+.logout a {
+    width: 40.5% !important;
+}
+
+form button, .logout a {
+    width: 42%;
+    padding: 15px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: #16396b;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.button {
+    text-align: center;
+    width: 40.5%;
+}
+
+.alert {
+    width: 40%;
+    padding: 17px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.alert.alert-error {
+    color: #ce787b;
+    background-color: #fff0f0;
+    border: 1px solid #ffdede;
+}
+
+.alert.alert-success {
+    color: #96c164;
+    background-color: #f6fff0;
+    border: 1px solid #d1f8ab;
+}
+
+.alert.alert-warning {
+    color: #c9ab77;
+    background-color: #fff3cd;
+    border: 1px solid #f9ecd0;
+}
+
+.alert.alert-info {
+    color: #3b7c95;
+    background-color: #cff4fc;
+    border: 1px solid #cbeaef;
+}
+
+.articles .article {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    background-color: #fcfcfc;
+    color: #5b7496;
+    border: 1px solid #f7f7f7;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.articles .article .article-desc {
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.articles .article .article-action a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.articles-actions, .articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.articles-actions .title, .articles .title {
+    text-align: left;
+    width: 42%;
+    color: #16396b;
+}
+
+.articles-actions form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.articles-actions form textarea {
+    width: 40%;
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(252, 252, 252, 0.4);
+    border: 1px solid #dbe0e7;
+    border-radius: 5px;
+}
+
+.hidden-title, .hidden-button {
+    display: none;
+}
+
+.edit-close {
+    margin-left: auto;
+    margin-right: auto;
+    width: 41%;
+    text-align: right;
+    position: relative;
+    bottom: 45px;
+    display: none;
+    cursor: pointer;
+}
+
+.edit-close.active {
+    display: block;
+}
