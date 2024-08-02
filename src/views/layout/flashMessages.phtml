@@ -1,0 +1,11 @@
+<?php
+use App\Manager\FlashMessage;
+
+$flashMessageManager = new FlashMessage();
+$messageTypes = ['success', 'error', 'warning', 'info'];
+foreach ($messageTypes as $type) {
+    $message = $flashMessageManager->getMessage($type);
+    if ($message) {
+        echo '<div class="alert alert-' . $type . '" role="alert">' . htmlspecialchars($message) . '</div>';
+    }
+}

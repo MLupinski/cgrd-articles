@@ -1,0 +1,60 @@
+<?php
+use App\Core\Database;
+use App\QueryHandler\ArticlesHandler;
+use App\Repository\ArticleRepository;
+
+require_once 'views/layout/header.phtml';
+$database = new Database();
+$articleRepository = new ArticleRepository($database);
+$articlesHandler = new ArticlesHandler($articleRepository);
+$articles = $articlesHandler->handle();
+?>
+<div class="articles">
+    <?php if (count($articles)): ?>
+        <div class="title">
+            <h2>All News</h2>
+        </div>
+    <?php endif;
+    foreach ($articles as $article): ?>
+        <div class="article" data-id="<?= $article->getId() ?>">
+            <span class="article-title" id="article-title-<?= $article->getId() ?>"><?= $article->getTitle() ?></span>
+            <span class="article-desc" id="article-desc-<?= $article->getId() ?>"><?= $article->getDescription() ?></span>
+            <div class="article-action">
+                <a href="#" data-id="<?= $article->getId() ?>" class="edit-article">
+                    <img src="public/images/pencil.svg" width="20px" alt="Edit"/>
+                </a>
+                <a href="/article/delete?id=<?= $article->getId() ?>">
+                    <img src="public/images/close.svg" width="20px" alt="Delete"/>
+                </a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="articles-actions">
+    <div class="title">
+        <h2 id="create-title">Create News</h2>
+        <h2 id="edit-title" class="hidden-title">Edit News</h2>
+    </div>
+    <div class="edit-close">
+        <span>
+            <img src="public/images/close.svg" alt="cancel" width="20px" />
+        </span>
+    </div>
+    <form action="/article/create" method="post" id="article-form">
+        <input type="text" name="article-title" id="article-title" placeholder="Title" />
+        <input type="hidden" value="" name="article-id" id="article-id" />
+        <textarea name="article-description" id="article-desc" placeholder="Description" rows="20" cols="100"></textarea>
+        <button type="submit" id="create-button">
+            Create
+        </button>
+        <button type="submit" id="edit-button" class="hidden-button">
+            Save
+        </button>
+    </form>
+</div>
+<div class="logout">
+    <a href="/logout" class="button">Logout</a>
+</div>
+
+<?php require_once 'views/layout/footer.phtml'; ?>
